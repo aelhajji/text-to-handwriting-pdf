@@ -11,19 +11,12 @@
   <!-- talwins -->
   <div class="container">
     <div class="row">
-      <div dir="rtl" class="col-6  col-xl-6  col-lg-6 col-md-12 col-sm-12 scrol  words">   
+      <div dir="rtl" class="col-6  col-xl-6  col-lg-6 col-md-12 col-sm-12 scrol  words">
+        <p id="mytext" class="color">نصك سيظهر هنا</p> 
       </div>
       <div dir="rtl" class="col-6  col-xl-6  col-lg-6 col-md-12 col-sm-12">
-        <div dir="rtl" class="descriptions title"><h1>انت فقط تحدت وكل ماتقوله سنحوله لكتابة وبعدها لملف بيدي اف  وكانه مكتوب بخط اليد</h1></div>
+        <div dir="rtl"  class="descriptions title"><textarea oninput="changeTextValue()" name="" id="textearia"  cols="auto" rows="0">ادخل النص هنا</textarea></div>
         <div class="words">
-          <div class="m-4 d-flex align-items-center">
-            <h4>-اختر اللغة(beta)</h4> 
-            <select onchange="choixlangue()" name="" id="langue">
-              <option value="AR">العربية</option>
-              <option value="FR">الفرنسية</option>
-              <option value="EN">الانجليزية</option>
-            </select>
-          </div>
           <div class="m-4 d-flex align-items-center">
             <h4 class="mr-2 ">-اختر لون الخط  </h4> 
             <select onchange="changecolor()" name="" id="colorseletd">
@@ -40,7 +33,7 @@
               <option value="">dastnevis</option>
             </select>
           </div>
-            <h4 class="m-4">-ادا عندك نص متكوب (beta) <a href="input-to-pdf.html">اضغط هنا</a></h4>
+            <h4 class="m-4"> -ادا اردت نطق النص  <a href="index.html">اضغط هنا</a></h4>
           <button onclick="generate_pdf()"  class=" m-4  btn btn-danger ">تحميل  النص(beta)</button>
         </div>      
       </div>
@@ -50,9 +43,9 @@
   <footer >
     <p class="text-center text-white">@SomeAbdeu</p>
   </footer>
-<script src="talk.js"></script>
 <script src="creat_pdf.js"></script>
 <script src="styling.js"></script>
+<script src="write.js"></script>
 <script src="cdn_pdf_githack.js"></script>
 </body>
 </html>

@@ -3,4 +3,5 @@ function generate_pdf(){
     html2pdf()
     .from(text)
     .save();
+    
 }
