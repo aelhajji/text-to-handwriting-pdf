@@ -25,9 +25,9 @@
             </select>
           </div>
           <div class="m-4 d-flex align-items-center">
-            <h4 class="mr-2">-اختر لون الخط  </h4> 
+            <h4 class="mr-2 ">-اختر لون الخط  </h4> 
             <select onchange="changecolor()" name="" id="colorseletd">
-              <option value="text-black">اسود</option>
+              <option  value="text-black">اسود</option>
               <option value="text-primary">أزرق</option>
               <option value="text-danger">أحمر</option>
             </select>
@@ -41,7 +41,7 @@
             </select>
           </div>
             <h4 class="m-4">-ادا عندك نص متكوب (beta) <a href="">اضغط هنا</a></h4>
-          <button  class=" m-4  btn btn-danger ">تحميل  النص(beta)</button>
+          <button onclick="generate_pdf()"  class=" m-4  btn btn-danger ">تحميل  النص(beta)</button>
         </div>      
       </div>
     </div>
@@ -53,6 +53,7 @@
 <script src="talk.js"></script>
 <script src="creat_pdf.js"></script>
 <script src="styling.js"></script>
+<script src="cdn_pdf_githack.js"></script>
 </body>
 </html>
 <style>

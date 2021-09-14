@@ -75,7 +75,11 @@
     /* margin-bottom: 40px; */
     max-height: 20px ;
   }
- 
+ select{
+   background-color: rgb(197, 197, 197);
+   border: none;
+   margin-right: 10px;
+ }
   @media only screen and (max-width: 1000px) {
     body {
       background: black;
