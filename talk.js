@@ -10,6 +10,8 @@ recognition.lang = 'AR';
 let p = document.createElement('p');
 const words = document.querySelector('.words');
 words.appendChild(p);
+p.classList.add('color');
+
 
 recognition.addEventListener('result', e => {
   const transcript = Array.from(e.results)
@@ -22,7 +24,9 @@ recognition.addEventListener('result', e => {
 
     if (e.results[0].isFinal) {
       p = document.createElement('p');
+      p.classList.add('color');
       words = words.appendChild(p);
+      
     }
 });
 
