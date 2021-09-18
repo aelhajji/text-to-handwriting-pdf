@@ -14,3 +14,24 @@ window.onload = function () {
             html2pdf().from(invoice).set(opt).save();
         })
 }
+
+
+//change colors
+//by elhajji
+function redColor(){
+    document.getElementById("invoice").className = "papier p-4 text-danger";
+}
+function blackColor(){
+    document.getElementById("invoice").className = "papier p-4 text-black";
+}
+function blueColor(){
+    document.getElementById("invoice").className = "papier p-4 text-primary";
+}
+
+//change font 
+function myhandWritingFont(){
+    document.getElementById("invoice").style.fontFamily = "My_handwriting";
+}
+function dastenvisFont(){
+    document.getElementById("invoice").style.fontFamily = "dastnevis";
+}
