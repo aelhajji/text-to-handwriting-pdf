@@ -1,61 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <title>audio to pdf</title>
-</head>
-<body class="" >
-  <!-- talwins -->
-  <div class="container">
-    <div class="row">
-      <div dir="rtl" class="col-6  col-xl-6  col-lg-6 col-md-12 col-sm-12 scrol  words">   
-      </div>
-      <div dir="rtl" class="col-6  col-xl-6  col-lg-6 col-md-12 col-sm-12">
-        <div dir="rtl" class="descriptions title"><h1>انت فقط تحدت وكل ماتقوله سنحوله لكتابة وبعدها لملف بيدي اف  وكانه مكتوب بخط اليد</h1></div>
-        <div class="words">
-          <div class="m-4 d-flex align-items-center">
-            <h4>-اختر اللغة(beta)</h4> 
-            <select onchange="choixlangue()" name="" id="langue">
-              <option value="AR">العربية</option>
-              <option value="FR">الفرنسية</option>
-              <option value="EN">الانجليزية</option>
-            </select>
-          </div>
-          <div class="m-4 d-flex align-items-center">
-            <h4 class="mr-2 ">-اختر لون الخط  </h4> 
-            <select onchange="changecolor()" name="" id="colorseletd">
-              <option  value="text-black">اسود</option>
-              <option value="text-primary">أزرق</option>
-              <option value="text-danger">أحمر</option>
-            </select>
-          </div>
-          <div class="m-4 d-flex align-items-center">
-            <h4>-اختر الخط(beta)</h4> 
-            <select name="" id="">
-              <option value="">dastnevis</option>
-              <option value="">dastnevis</option>
-              <option value="">dastnevis</option>
-            </select>
-          </div>
-            <h4 class="m-4">-ادا عندك نص متكوب (beta) <a href="input-to-pdf.html">اضغط هنا</a></h4>
-          <button onclick="generate_pdf()"  class=" m-4  btn btn-danger ">تحميل  النص(beta)</button>
-        </div>      
-      </div>
-    </div>
-  </div>
-  
-  <footer >
-    <p class="text-center text-white">@SomeAbdeu</p>
-  </footer>
-<script src="talk.js"></script>
-<script src="creat_pdf.js"></script>
-<script src="styling.js"></script>
-<script src="cdn_pdf_githack.js"></script>
-</body>
-</html>
-<style>
+<html lang="ar">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text to hundwrite</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- <link rel="stylesheet" href="pdf.css" /> -->
+    <script src="pdf.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script> -->
+
+</head>
+
+<body  class="bg-white">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" id="titlenave" href="#">HANDWRITING CONVERTER</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ml-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-language mr-2"></i> LANGUE
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Arabic</a></li>
+                      <li><a class="dropdown-item" href="#">English</a></li>
+                    </ul>
+                  </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-font mr-2"></i> FONTS
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Arabic</a></li>
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-fill-drip mr-2"></i>  COLORS
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Arabic</a></li>
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" id="download"><i class="fas fa-file-pdf mr-2"></i>DOWNLOAD PDF</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container d-flex justify-content-center ">
+        <div class="row">
+            <div  class="col-md-12">
+                <div style="direction: ltr; unicode-bidi: embed;"   contenteditable class="papier p-4" id="invoice">
+                    على قدر ما تتعدد منتجات المجتمع الفني للأفلام، يظلُّ داخل بعض الأفراد منّا تعلق بواحدٍ منها أو أكثر، الأمر الذي يُعبَّر عنه أحيانًا بمشاهدة ذلك الفيلم مرات عديدة.
+
+                        ودعونا نتسائل الآن فنقول: لماذا قد يحصل ذلك؟
+                        
+                        يمكننا تلخيص الأسباب في أربع نقاط رئيسيّة:
+                        
+                        أولًا: التعلّق النفسي بالبطل/ة:
+                        
+                        غالبًا سنكرر فيلما تلامست يوميّات بطله مع يوميّاتنا، أو عبّرت أحداثه عنّا بصورة ما. وربما كذلك أعدنا المشاهدة لمجرد أننا أحببنا تمثيل أحد الشخصيّات؛ إذ تحسَّسْنا صِدقه في تعبيره عن مشاعر شخصيّته. وهذا التعلُّق برأيي صحيٌّ جدًا، لأنه عادةً ما يمنحنا رؤيّة أعمق لأنفسنا، غالبا ما تغيب عنّا وسط روتيننا اليوميّ.
+                        
+                        ثانيًا: الرمزيّات غير المفهومة:
+                        
+                        تتميّز الفنون الأدبيّة بقابليتها للتأويل؛ إذ يمكن للصورة الواحدة أن تحمل معانٍ عديدة، يستَشِفُ منها كلُّ فرد ما تسمح له به تجربته. ولذلك فالأفلام الحقّة هي تلك التي تحوي تكثيفا عميقا ومركّبًا.
+                        
+                        وحين نشاهد عملا به ذلك التكثيف نبدأ التساؤل عن ماهيته ومعانيه. وبعد اندهاشنا بتلك المعاني، يرجع بعضنا إلى الفيلم مباشرة أو بعد فترة؛ ليتحسس صدق هذه المعاني من عدمها. لكنّ الرائع في تلك التجربة، أنه غالبًأ ما يخرج ذلك العائد بمعانٍ جديدة، لم يجدها في مشاهدته الأولى!
+                        
+                        ثالثًا: الخوف:
+                        
+                        حين نلامس في حياتنا لحظة أو لحظتين من النشوة والابتهاج، نحاول جاهدين الاحتفاظ بأثرهما معنا طيلة اليوم.
+                        
+                        ومن هذا المنطلق، يخاف بعضنا إذا هو عايش فيلما واستمتع به ثم شاهد غيره، ألا يكون الثاني في جودة الأول، فحينها تتبدل مشاعر رضاه ويخسر علاقته حديثة التكوين. وهنا سؤال: لماذا يخاف بعضنا من التجربة؟ ولماذا نخشى الوقوع في الأغلاط؟
+                        
+                        رابعًا: الحنين إلى الماضي:
+                        
+                        ربما نظن أن الحنين خاص بوالدينا أو أجدادنا فقط، لكن الحنين اليوم أصبح مُشاهدًا -على عكس المتوقع- لدى الشباب أكثر من الآباء! فكما يحن بعض الآباء إلى أفلام الأبيض والأسود، يمتلك شبابنا حنينهم الخاص. وأنا شخصيًّا أحن إلى بعض الأفلام لمجرد أنها كانت مدخلي إلى عالم السينما.
+                        
+                        بالطبع هناك أسباب أخرى كثيرة، انتظر منكم مشاركتي إيّاها في التعليقات بعد أن تخبروني هل لديكم أفلام شاهدتموها أكثر من مرة؟
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    @font-face {
+    font-family: dastnevis;
+    src: url(font/dastnevis.ttf);
+    }
+    @font-face {
+    font-family: My_handwriting;
+    src: url(font/BrittanySignature.ttf);
+    }
+    .navbar-light .navbar-toggler-icon{
+background-image: url(https://cdn-icons-png.flaticon.com/512/29/29076.png)!important;
+}
+    #titlenave{
+        font-family: My_handwriting;
+        font-size: 10px;
+        text-shadow: 1px;
+        font-weight: bold;
+    }
+#invoice{
+    background-image: url('images/walpaper.jpg');
+    font-family: dastnevis;
+    unicode-bidi: bidi-override !important;
+    direction: rtl !important;
+    text-align:right;
+    text-align: justify;
+    min-width: 251px;
+    min-height: 250px;
+}
 </style>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="svpdf.js"></script>
+</html>
