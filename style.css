@@ -1,0 +1,27 @@
+@font-face {
+    font-family: dastnevis;
+    src: url(font/dastnevis.ttf);
+    }
+    @font-face {
+    font-family: My_handwriting;
+    src: url(font/BrittanySignature.ttf);
+    }
+    .navbar-light .navbar-toggler-icon{
+background-image: url(https://cdn-icons-png.flaticon.com/512/29/29076.png)!important;
+}
+    #titlenave{
+        font-family: My_handwriting;
+        font-size: 10px;
+        text-shadow: 1px;
+        font-weight: bold;
+    }
+#invoice{
+    background-image: url('images/walpaper.jpg');
+    font-family: dastnevis;
+    unicode-bidi: bidi-override !important;
+    direction: rtl !important;
+    text-align:right;
+    text-align: justify;
+    min-width: 251px;
+    min-height: 250px;
+}
