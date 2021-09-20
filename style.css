@@ -20,7 +20,7 @@ background-image: url(https://cdn-icons-png.flaticon.com/512/29/29076.png)!impor
     font-family: dastnevis;
     /* unicode-bidi: bidi-override !important;
     direction: rtl ; */
-    text-align:right;
+    /* text-align:right; */
     text-align: justify;
     min-width: 251px;
     min-height: 250px;
